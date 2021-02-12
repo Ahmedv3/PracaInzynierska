@@ -53,11 +53,7 @@ int main() {
 
 		cv::Mat structuringElement = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
 
-		Mat kernel = Mat::ones(Size(5, 5), 1);
-
 		cv::erode(imgThresh, imgThresh, structuringElement);
-		cv::erode(imgThresh, imgThresh, kernel);
-
 
 		findContours(imgThresh,contour0 ,RETR_TREE, CHAIN_APPROX_SIMPLE);	
 		
